@@ -10,7 +10,7 @@ export default function AuthLayout({ children }) {
             <div className="flex flex-col gap-2">
               <div className="flex items-center justify-between">
                 <h1 className="text-2xl font-bold text-primary">
-                  EnvVault
+                  EnVault
                 </h1>
 
                 <div className="rounded-sm border border-outline/50 px-2 py-0.5 text-sm text-on-surface-variant">

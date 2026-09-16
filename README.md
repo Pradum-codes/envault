@@ -1,6 +1,6 @@
-# EnvVault
+# EnVault
 
-EnvVault is a personal, secure environment variable manager for developers.
+EnVault is a personal, secure environment variable manager for developers.
 
 It provides a simple place to store environment variables for different projects and retrieve them whenever you return to a project. Instead of searching through old `.env` files, credentials, or notes, you can organize everything in one private vault.
 
@@ -52,11 +52,11 @@ CLOUDINARY_API_KEY=your-api-key
 PORT=5000
 ```
 
-After finishing the project, you can store these variables in EnvVault.
+After finishing the project, you can store these variables in EnVault.
 
 When returning to Shortify months later:
 
-1. Log in to EnvVault.
+1. Log in to EnVault.
 2. Open the Shortify project.
 3. Copy or export the required environment variables.
 4. Continue development without searching through old files.
@@ -81,7 +81,7 @@ The application is intentionally kept simple. It does not require microservices,
 ## Application Structure
 
 ```text
-EnvVault
+EnVault
 │
 ├── Authentication
 │   └── Login
@@ -135,7 +135,7 @@ Example:
 
 ## Security Model
 
-EnvVault is designed for personal use, but sensitive values should still be handled responsibly.
+EnVault is designed for personal use, but sensitive values should still be handled responsibly.
 
 ### Environment Variable Storage
 
@@ -178,7 +178,7 @@ Make sure you have the following installed:
 
 ```bash
 git clone <repository-url>
-cd envvault
+cd EnVault
 ```
 
 ### Install Dependencies
@@ -192,7 +192,7 @@ npm install
 Create a `.env` file:
 
 ```env
-DATABASE_URL="postgresql://username:password@localhost:5432/envvault"
+DATABASE_URL="postgresql://username:password@localhost:5432/EnVault"
 AUTH_SECRET="your-auth-secret"
 VAULT_ENCRYPTION_KEY="your-encryption-key"
 ```
@@ -226,7 +226,7 @@ http://localhost:3000
 
 ## Project Philosophy
 
-EnvVault is intentionally a small project.
+EnVault is intentionally a small project.
 
 The goal is not to build a replacement for HashiCorp Vault or AWS Secrets Manager. The goal is to solve a personal developer workflow problem:
 
