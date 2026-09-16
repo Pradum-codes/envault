@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+
+  --surface: #131315;
+  --surface-dim: #131315;
+  --surface-bright: #39393b;
+  --surface-container-lowest: #0e0e10;
+  --surface-container-low: #1b1b1d;
+  --surface-container: #1f1f21;
+  --surface-container-high: #2a2a2c;
+  --surface-container-highest: #353437;
+  --surface-variant: #353437;
+  --surface-tint: #d2bbff;
+
+  --on-surface: #e4e2e4;
+  --on-surface-variant: #ccc3d8;
+  --inverse-surface: #e4e2e4;
+  --inverse-on-surface: #303032;
+
+  --outline: #958da1;
+  --outline-variant: #4a4455;
+
+  --primary: #d2bbff;
+  --on-primary: #3f008e;
+  --primary-container: #7c3aed;
+  --on-primary-container: #ede0ff;
+  --inverse-primary: #732ee4;
+
+  --secondary: #4ae176;
+  --on-secondary: #003915;
+  --secondary-container: #00b954;
+  --on-secondary-container: #004119;
+
+  --tertiary: #ffb3ad;
+  --on-tertiary: #68000a;
+  --tertiary-container: #c6252b;
+  --on-tertiary-container: #ffdfdc;
+
+  --error: #ffb4ab;
+  --on-error: #690005;
+  --error-container: #93000a;
+  --on-error-container: #ffdad6;
+
+  --background: var(--surface);
+  --foreground: var(--on-surface);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-dim: var(--surface-dim);
+  --color-surface-bright: var(--surface-bright);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-surface-variant: var(--surface-variant);
+  --color-surface-tint: var(--surface-tint);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-inverse-surface: var(--inverse-surface);
+  --color-inverse-on-surface: var(--inverse-on-surface);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-inverse-primary: var(--inverse-primary);
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary-container: var(--on-secondary-container);
+  --color-tertiary: var(--tertiary);
+  --color-on-tertiary: var(--on-tertiary);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-on-tertiary-container: var(--on-tertiary-container);
+  --color-error: var(--error);
+  --color-on-error: var(--on-error);
+  --color-error-container: var(--error-container);
+  --color-on-error-container: var(--on-error-container);
+  --font-sans: var(--font-roboto-mono);
+  --font-mono: var(--font-roboto-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-roboto-mono), monospace;
+}
