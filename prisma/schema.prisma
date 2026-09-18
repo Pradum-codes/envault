@@ -7,23 +7,44 @@ datasource db {
 }
 
 model User {
-  id       String    @id @default(cuid())
-  username String    @unique
+  id       String @id @default(cuid())
+  username String @unique
   password String
 
-  projects Project[]
-  sessions Session[]
+  projects  Project[]
+  categories Category[]
+  sessions  Session[]
 }
 
 model Project {
-  id        String               @id @default(cuid())
+  id           String   @id @default(cuid())
+  name         String
+  version      String
+  description  String?
+  categoryId   String
+  userId       String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  category     Category @relation(fields: [categoryId], references: [id])
+  variables    EnvironmentVariable[]
+
+  @@index([userId])
+  @@index([categoryId])
+}
+
+model Category {
+  id        String   @id @default(cuid())
   name      String
+  icon      String
   userId    String
-  createdAt DateTime             @default(now())
+  createdAt DateTime @default(now())
 
-  user      User                 @relation(fields: [userId], references: [id])
-  variables EnvironmentVariable[]
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  projects Project[]
 
+  @@unique([userId, name])
   @@index([userId])
 }
 
