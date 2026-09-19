@@ -1,6 +1,7 @@
 import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 
+// Get all projects
 export async function GET() {
   try {
     const user = await getCurrentUser();
@@ -35,6 +36,7 @@ export async function GET() {
   }
 }
 
+// Create a new project
 export async function POST(request) {
   try {
     const user = await getCurrentUser();
