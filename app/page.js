@@ -67,6 +67,11 @@ export default function DashboardPage() {
       try {
         const response = await fetch("/api/projects");
 
+        if (response.status === 401) {
+          router.replace("/login");
+          return;
+        }
+
         if (!response.ok) {
           throw new Error("Failed to fetch projects");
         }
@@ -79,7 +84,7 @@ export default function DashboardPage() {
     }
 
     fetchProjects();
-  }, []);
+  }, [router]);
 
   useEffect(() => {
     function handleKeyDown(event) {
@@ -105,6 +110,11 @@ export default function DashboardPage() {
       try {
         const response = await fetch("/api/category");
 
+        if (response.status === 401) {
+          router.replace("/login");
+          return;
+        }
+
         if (!response.ok) {
           throw new Error("Failed to fetch categories");
         }
@@ -118,7 +128,7 @@ export default function DashboardPage() {
     }
 
     fetchCategories();
-  }, []);
+  }, [router]);
 
   function handleFormChange(event) {
     const { name, value } = event.target;
@@ -143,6 +153,11 @@ export default function DashboardPage() {
           categoryId: formData.categoryId,
         }),
       });
+
+      if (response.status === 401) {
+        router.replace("/login");
+        return;
+      }
 
       const data = await response.json();
 

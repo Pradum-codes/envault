@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import {
   Download,
   Pencil,
@@ -14,6 +14,7 @@ import {
 
 export default function Project() {
   const { id } = useParams();
+  const router = useRouter();
 
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -32,6 +33,12 @@ export default function Project() {
 
       try {
         const response = await fetch(`/api/projects/${id}`);
+
+        if (response.status === 401) {
+          router.replace("/login");
+          return;
+        }
+
         const data = await response.json();
 
         if (!response.ok) {
@@ -52,7 +59,7 @@ export default function Project() {
     if (id) {
       fetchProject();
     }
-  }, [id]);
+  }, [id, router]);
 
   // Fetch environment variables
   useEffect(() => {
@@ -64,6 +71,11 @@ export default function Project() {
         const response = await fetch(
           `/api/projects/${id}/variables`
         );
+
+        if (response.status === 401) {
+          router.replace("/login");
+          return;
+        }
 
         const data = await response.json();
 
@@ -89,7 +101,7 @@ export default function Project() {
     if (id) {
       fetchVariables();
     }
-  }, [id]);
+  }, [id, router]);
 
   // Render
   return (
